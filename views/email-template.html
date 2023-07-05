@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Meeting Scheduled</title>
+    <style>
+      body {
+        background-color: #f9fafb;
+      }
+
+      .main {
+        max-width: 42rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem 4rem 2rem 4rem;
+      }
+
+      .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 0.75rem;
+        margin: 1.5rem 0 1.5rem 0;
+      }
+
+      .successIcon {
+        width: 6rem;
+        fill: #16a34a;
+      }
+
+      .messageHead {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: 600;
+      }
+
+      .messageBody {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: #64748b;
+      }
+
+      .userName {
+        color: #16a34a;
+        font-weight: 600;
+      }
+
+      .table {
+        overflow: hidden;
+      }
+
+      .tableChild {
+        border-top-width: 1px;
+        border-color: #64748b;
+        padding: 1.25rem 1rem 1.25rem 1rem;
+      }
+
+      .tableChild dl {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+      }
+
+      .itemList dt,
+      dd {
+        display: table-cell;
+        padding: 10px;
+      }
+
+      .itemList dt {
+        font-weight: bold;
+      }
+
+      .itemList dd {
+        margin-left: 10px;
+      }
+
+      .itemList {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+      }
+
+      .itemList dt {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 500;
+        color: #64748b;
+      }
+
+      .itemList dd {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 500;
+        color: #64748b;
+      }
+
+      .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.5rem;
+      }
+
+      .footerText {
+        color: #64748b;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+
+      .footerText a {
+        color: #16a34a;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <svg
+          style="color: rgb(22, 163, 74)"
+          viewBox="0 0 1024 1024"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#16a34a"
+            d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896zm-55.808 536.384-99.52-99.584a38.4 38.4 0 1 0-54.336 54.336l126.72 126.72a38.272 38.272 0 0 0 54.336 0l262.4-262.464a38.4 38.4 0 1 0-54.272-54.336L456.192 600.384z"
+          ></path>
+        </svg>
+        <p class="messageHead">Meeting Scheduled Successfully</p>
+        <p class="messageBody">
+          Congratulations <span class="userName">{{name}}</span>! You have
+          successfully booked room {{room}}.
+        </p>
+      </div>
+
+      <div class="table">
+        <div class="tableChild">
+          <dl class="divide-y divide-gray-200">
+            <div class="itemList">
+              <dt>Booking ID</dt>
+              <dd>{{bookingId}}</dd>
+            </div>
+            <div class="itemList">
+              <dt>Date</dt>
+              <dd>{{date}}</dd>
+            </div>
+            <div class="itemList">
+              <dt>Time</dt>
+              <dd>{{time}}</dd>
+            </div>
+            <div class="itemList">
+              <dt>Room</dt>
+              <dd>{{room}}</dd>
+            </div>
+            <div class="itemList">
+              <dt>Location</dt>
+              <dd>{{location}}</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p class="footerText">
+          If you have question or need help, please
+          <a href="mailto:{{emailAdmin}}">contact the administrator.</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
